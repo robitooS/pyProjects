@@ -34,11 +34,11 @@ class TicTacToe():
             # Vertical
             dict_win[i] = (self.board[0][0] == self.board[1][0] == self.board[2][0] == i or
                         self.board[0][1] == self.board[1][1] == self.board[2][1] == i or
-                        self.board[0][2] == self.board[1][2] == self.board[2][2] == i)
+                        self.board[0][2] == self.board[1][2] == self.board[2][2] == i or dict_win[i])
             
             # Diagonal
             dict_win[i] = (self.board[0][0] == self.board[1][1] == self.board[2][2] == i or
-                        self.board[0][2] == self.board[1][1] == self.board[2][0] == i)
+                        self.board[0][2] == self.board[1][1] == self.board[2][0] == i or dict_win[i])
             
         if dict_win["X"]:
             self.done = "x"
@@ -101,7 +101,6 @@ class TicTacToe():
         
         
 tictactoe = TicTacToe()
-tictactoe.print_board()
 next = 0
 
 while next == 0:
